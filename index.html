@@ -52,7 +52,7 @@
             </div>
         </div><!--.navbar-default-->
 					<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.js'></script>
-					<script src='https://data.lacity.org/api/views/hrmq-h3gk/rows.json?accessType=DOWNLOAD'></script>
+					<script src='socrata.json'></script>
 					<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css' rel='stylesheet' />
 					<style>
 						#map { width: 100%; height: 500px;}
@@ -60,7 +60,7 @@
 					<div id='map'></div>
 					<script>
   var m = mapbox.map('map');
-  m.addLayer(mapbox.layer().id('examples.map-20v6611k'));
+  m.addLayer(mapbox.layer().id('abhinemani.jmn33pkm'));
 
   // Create an empty markers layer
   var markerLayer = mapbox.markers.layer();
@@ -71,7 +71,7 @@
   mapbox.markers.interaction(markerLayer);
   m.addLayer(markerLayer);
 
-  m.zoom(10).center({ lat: 34, lon: -118 });
+  m.zoom(15).center({ lat: 34, lon: -118 });
 
   var features = [];
   for (var i = 0; i < socrata_data.data.length; i++) {
@@ -79,12 +79,12 @@
       features.push({
           properties: {
               title: d[10],
-              'marker-color': (d[16] === 'Free') ? '#75FF7A' : '#555',
+              'marker-color': (d[15] === 'COMPLETED') ? '#cc0000' : '#555',
               description: d[11] + ', ' + d[12]
           },
           geometry: {
               coordinates: [
-                  d[9][2], d[9][1]
+                  d[34][2], d[34][1]
               ]
           }
       });
@@ -107,16 +107,16 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="center-header">
-                            <h3 class="center-heading">About Us</h3>
+                            <h3 class="center-heading">Explore Data:LA</h3>
                             <span class="center-line"></span>
-                            <p>Shortly About us</p>
+                            <p>Information, Insights, and Analysis from the City of Los Angeles</p>
                         </div>
                     </div>
                 </div><!--center heading row-->
                 <div class="row">
                     <div class="col-md-7">
                         <p class="wow animated fadeInLeft">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+							Welcome to DataLA, the open data portal for the City of Los Angeles. Here you will find data to conduct research, develop web, online, and mobile applications, and generally learn more about Los Angeles. This site allows you to subscribe to changes in datasets, request new datasets, and participate in discussions with other users. We look forward to seeing what you do with DataLA.
                         </p>
                     </div>
                     <div class="col-md-5">
@@ -172,7 +172,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3>Our Process</h3>
+                        <h3>Dive into the Data</h3>
                     </div> 
                 </div>
                 <div class="row">
