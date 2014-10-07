@@ -71,7 +71,7 @@
   mapbox.markers.interaction(markerLayer);
   m.addLayer(markerLayer);
 
-  m.zoom(15).center({ lat: 34, lon: -118 });
+  m.zoom(20).center({ lat: 34, lon: -118 });
 
   var features = [];
   for (var i = 0; i < socrata_data.data.length; i++) {
@@ -120,23 +120,16 @@
                         </p>
                     </div>
                     <div class="col-md-5">
-                        <div class="skills-wrapper wow animated fadeInRight animated animated" data-wow-delay="0.2s">
-                            <h3 class="heading-progress">Web Design <span class="pull-right">88%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 88%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar">
+                        <div class="contact-form">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="name">Find data</label>
+                                    <input type="text" class="form-control" id="name" value="e.g. Building Permits, Procurement, etc">
                                 </div>
-                            </div>
-                            <h3 class="heading-progress">Web Development <span class="pull-right">78%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 78%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="78" role="progressbar">
-                                </div>
-                            </div>
-                            <h3 class="heading-progress">Marketing <span class="pull-right">82%</span></h3>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 82%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="82" role="progressbar">
-                                </div>
-                            </div>                    
-                        </div><!--skills-->
+                              
+                                <button type="submit" class="btn btn-theme-bg">Search</button>
+                            </form><!--form-->
+
                     </div>
                 </div>
             </div><!--intro and skills-->
@@ -150,8 +143,8 @@
                 <div class="divide40"></div>
                 <div class="row">
                     <div class="col-md-3 margin20 facts-in">
-                        <h3><i class="fa fa-image"></i><span class="counter">5.3</span></h3>
-                        <h4>Permit Valuation (Billion)</h4>
+                        <h3><i class="fa fa-image"></i><span class="counter">213</span></h3>
+                        <h4>Data Sets Opened</h4>
                     </div><!--facts in-->
                     <div class="col-md-3 margin20 facts-in">
                         <h3><i class="fa fa-users"></i><span class="counter">1,820,000</span></h3>
@@ -172,32 +165,32 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3>Dive into the Data</h3>
+                        <h3>Popular Data Sets</h3>
                     </div> 
                 </div>
                 <div class="row">
                     <div class="col-md-3 margin20">
                         <div class="process-box wow animated fadeInUp">
                             <i class="fa fa-lightbulb-o"></i>
-                            <h4>A Prosperous City</h4>
+                            <h4>Rules & Regulations</h4>
                         </div><!--process box-->
                     </div><!--process col-->
                     <div class="col-md-3 margin20">
                         <div class="process-box wow animated fadeInUp">
                             <i class="fa fa-pencil"></i>
-                            <h4>A Well Run City</h4>
+                            <h4>Purchasing</h4>
                         </div><!--process box-->
                     </div><!--process col-->
                     <div class="col-md-3 margin20">
                         <div class="process-box wow animated fadeInUp">
                             <i class="fa fa-bars"></i>
-                            <h4>A Sustainable City</h4>
+                            <h4>Crime</h4>
                         </div><!--process box-->
                     </div><!--process col-->
                     <div class="col-md-3 margin20">
                         <div class="process-box wow animated fadeInUp">
                             <i class="fa fa-plane"></i>
-                            <h4>A Safe City</h4>
+                            <h4>Transportation</h4>
                         </div><!--process box-->
                     </div><!--process col-->
                 </div>
@@ -209,59 +202,40 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="center-header">
-                            <h3 class="center-heading">Our Services</h3>
+                            <h3 class="center-heading">The City's Priority Outcomes</h3>
                             <span class="center-line"></span>
-                            <p>What We Do</p>
+                            <p>What We Do & How to Help</p>
                         </div>
                     </div>
                 </div><!--center heading row-->
                 <div class="row">
-                    <div class="col-md-4 margin20">
+                    <div class="col-md-6 margin20">
                         <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-desktop"></i> Responsive Design</h4>
+                            <h4><i class="fa fa-desktop"></i> A Well Run City</h4>
                             <p>
                                 Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
                             </p>
                         </div><!--service box-->
                     </div><!--service-col-->
-                    <div class="col-md-4 margin20">
+                    <div class="col-md-6 margin20">
                         <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-image"></i> Parallax Background</h4>
+                            <h4><i class="fa fa-image"></i> A Safe City</h4>
                             <p>
                                 Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
                             </p>
                         </div><!--service box-->
                     </div><!--service-col-->
-                    <div class="col-md-4 margin20">
+                    <div class="col-md-6 margin20">
                         <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-keyboard-o"></i> Easy to Customize </h4>
+                            <h4><i class="fa fa-keyboard-o"></i> A Livable and Sustainable City </h4>
                             <p>
                                 Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
                             </p>
                         </div><!--service box-->
                     </div><!--service-col-->
-                </div><!--row-->
-                <div class="divide40"></div>
-                <div class="row">
-                    <div class="col-md-4 margin20">
+                    <div class="col-md-6 margin20">
                         <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-thumbs-o-up"></i> 24/7 Dedicated Support</h4>
-                            <p>
-                                Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
-                            </p>
-                        </div><!--service box-->
-                    </div><!--service-col-->
-                    <div class="col-md-4 margin20">
-                        <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-flag"></i> Font Awesome Icons</h4>
-                            <p>
-                                Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
-                            </p>
-                        </div><!--service box-->
-                    </div><!--service-col-->
-                    <div class="col-md-4 margin20">
-                        <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-text-height"></i> Google Fonts </h4>
+                            <h4><i class="fa fa-thumbs-o-up"></i> A Prosperous City</h4>
                             <p>
                                 Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
                             </p>
@@ -689,18 +663,23 @@
                         </div><!--contact-form-->
                     </div>
                     <div class="col-md-5">
-                        <h3 class="heading">Address Info</h3>
-                        <p>
-                            Duis nisl est, porta eu augue et, tempor congue mauris. Praesent a ligula in urna consectetur rhoncus.
-                        </p>
-                        <ul class="address-info list-unstyled">
-                            <li><i class="fa fa-home"></i> Vaishali nagar, Jaipur, 302012</li>  
-                            <li><i class="fa fa-phone"></i> +91 123456789</li>  
-                            <li><i class="fa fa-envelope"></i> <a href="#">support@designmylife.com</a></li> 
-                            <li><i class="fa fa-print"></i> 1234567595 9449</li>
-                            <li><i class="fa fa-clock-o"></i>Monday - Friday : 9:30pm - 5:30pm</li>
-                        </ul>  
-                    </div>
+                       <div class="skills-wrapper wow animated fadeInRight animated animated" data-wow-delay="0.2s">
+                           <h3 class="heading-progress">Web Design <span class="pull-right">88%</span></h3>
+                           <div class="progress">
+                               <div class="progress-bar" style="width: 88%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar">
+                               </div>
+                           </div>
+                           <h3 class="heading-progress">Web Development <span class="pull-right">78%</span></h3>
+                           <div class="progress">
+                               <div class="progress-bar" style="width: 78%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="78" role="progressbar">
+                               </div>
+                           </div>
+                           <h3 class="heading-progress">Marketing <span class="pull-right">82%</span></h3>
+                           <div class="progress">
+                               <div class="progress-bar" style="width: 82%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="82" role="progressbar">
+                               </div>
+                           </div>                    
+                       </div><!--skills-->
                 </div><!--contact detail-->
             </div>
         </section><!--#contact-->
