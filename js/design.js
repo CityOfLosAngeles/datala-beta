@@ -14,25 +14,9 @@ $('.js-close-modal').on('click', function(e) {
     return false;
 });
 
-$('.js-signup-action').on('click',function() {
-    Views.modal.show('auth', function(err) {
-        if (err && err.code !== 'closed') Views.modal.show('err', err);
-        if (err && err.code === 'closed') return;
-        location.href = '/projects/#new';
-    });
-    Views.modal.slide('active3');
-    analytics.track('Clicked Design Signup Link');
-    return false;
-});
 
 $('.js-fullheight').css('height', $(window).height());
 
-$('.js-more').on('click', function(e) {
-    e.preventDefault();
-    $('html,body').animate({
-        scrollTop: $('section#about').offset().top - fixheader
-    }, 400);
-});
 
 $('.js-map-select', $navigation).on('click', function(e) {
     setMap($(this).attr('id'));
@@ -64,6 +48,8 @@ function setMap(id) {
         .addClass(d.mapcolor);
 
     layerGroup.clearLayers();
+	
+
 
     var layer = L.mapbox.tileLayer(d.id)
         .addTo(layerGroup);
@@ -83,10 +69,14 @@ function setMap(id) {
         d.marker = d.marker;
     });
 
+
 }
+
+
 
 if ($(window).width() < 770) {
     map.touchZoom.disable();
     map.tap.disable();
     map.dragging.disable();
 };
+
