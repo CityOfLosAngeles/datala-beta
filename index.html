@@ -9,7 +9,6 @@
         <!-- Bootstrap -->
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- custom css -->
-        <link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
         <!-- font awesome for icons -->
         <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <!-- animated css  -->
@@ -23,7 +22,10 @@
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+	    <!--[if IE 9]><link href='/css/site-ie9.css' rel='stylesheet' /><![endif]-->
 
+	    <!--[if lt IE 9 ]><script src='/js/redirect-ie.js'></script><![endif]-->
+        <link href="css/style2.css" rel="stylesheet" type="text/css" media="screen">
 
     </head>
     <body data-spy="scroll" data-offset="80">
@@ -38,76 +40,28 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Data:LA <span>Mayor Eric Garcetti</span></a>
+                    <a class="navbar-brand" href="index.html"><img src="https://data.lacity.org/api/assets/FB989CD4-B369-4A38-B158-D20C0A02886D" height="75px"></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="https://data.lacity.org/data">Data Catalog</a></li>
+                        <li><a href="https://data.lacity.org/data">Developer Resources</a></li>
                         <li><a href="https://data.lacity.org/nominate">Request Data</a></li>
                         <li><a href="https://data.lacity.org/signup">Sign Up</a></li>
                         <li><a href="https://data.lacity.org/signup">Sign In</a></li>
-                        <li><a href="mailto:mayor.opendata@lacity.org">Get in Touch</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </div><!--.navbar-default-->
-					<script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.js'></script>
-					<script src='socrata.json'></script>
-					<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css' rel='stylesheet' />
-					<style>
-						#map { width: 100%; height: 500px;}
-					</style>
-					<div id='map'></div>
-					<script>
-  var m = mapbox.map('map');
-  m.addLayer(mapbox.layer().id('abhinemani.jmn33pkm'));
+		<iframe width='100%' height='400' frameborder='0' src='http://abhinemani.cartodb.com/viz/ea5ec4be-5093-11e4-b6ac-0e4fddd5de28/embed_map' target="_top"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
 
-  // Create an empty markers layer
-  var markerLayer = mapbox.markers.layer();
-
-  // Add interaction to this marker layer. This
-  // binds tooltips to each marker that has title
-  // and description defined.
-  mapbox.markers.interaction(markerLayer);
-  m.addLayer(markerLayer);
-
-  m.zoom(20).center({ lat: 34, lon: -118 });
-
-  var features = [];
-  for (var i = 0; i < socrata_data.data.length; i++) {
-      var d = socrata_data.data[i];
-      features.push({
-          properties: {
-              title: d[10],
-              'marker-color': (d[15] === 'COMPLETED') ? '#cc0000' : '#555',
-              description: d[11] + ', ' + d[12]
-          },
-          geometry: {
-              coordinates: [
-                  d[34][2], d[34][1]
-              ]
-          }
-      });
-  }
-  // Add a single feature to the markers layer.
-  // You can use .features() to add multiple features.
-  markerLayer.features(features);
-  m.extent(markerLayer.extent());
-</script>		
-        <div class="one-page-static-wrap parallax" data-stellar-background-ratio="0.5">
-            <div class="container">
-				
-                <div class="static-text">
-					
-                </div>
-            </div>
-        </div><!--static wrapper-->
+		</iframe>
         <section id="about" class="padding-80">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="center-header">
-                            <h3 class="center-heading">Explore Data:LA</h3>
+                            <h3 class="center-heading">Los Angeles Open Data</h3>
                             <span class="center-line"></span>
                             <p>Information, Insights, and Analysis from the City of Los Angeles</p>
                         </div>
@@ -115,8 +69,12 @@
                 </div><!--center heading row-->
                 <div class="row">
                     <div class="col-md-7">
+						<h4>Message from the Mayor</h4>
                         <p class="wow animated fadeInLeft">
-							Welcome to DataLA, the open data portal for the City of Los Angeles. Here you will find data to conduct research, develop web, online, and mobile applications, and generally learn more about Los Angeles. This site allows you to subscribe to changes in datasets, request new datasets, and participate in discussions with other users. We look forward to seeing what you do with DataLA.
+							<img src="img/garcetti-round" align="left" hspace="5">
+								  Opening government data gives companies, individuals, and nonprofit organizations the opportunity to leverage one of government’s greatest assets: public information. Most significantly, it fosters creative new thinking about solving our most intractable challenges through public-private partnerships and promoting a culture of collaboration. That's why I have charged the city administration to open all of the city's data to support a culture of data-driven decision-making and innovation, inside City Hall and out. Here, on data.lacity.org, you will can use the city's data to conduct research, develop applications, and generally develop a better understanding of your city government. Explore the data by search or category, or request a new dataset if you can't find what you're looking for. The City is here to listen and support you as you find new and creative ways to use Los Angeles Open Data. 
+							<img src="img/signature.png" align="right" style="margin: 5px 15px;">
+							
                         </p>
                     </div>
                     <div class="col-md-5">
@@ -126,10 +84,10 @@
                                     <label for="name">Join the Community</label>
                                     <input type="text" class="form-control" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Enter Your email To join the growing Data:LA community':this.value;" value="Enter Your email To join the growing Data:LA community " / id="name">
                                 </div>
-                              
+                            
                                 <button type="submit" class="btn btn-theme-bg">Sign up</button>
-								
                             </form><!--form-->
+
 
                     </div>
                 </div>
@@ -169,26 +127,52 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3>Engage with Apps Built on Open Data</h3>
+                        <h3>Explore by Category</h3>
                     </div> 
                 </div>
                 <div class="row">
                     <div class="col-md-3 margin20">
                         <div class="process-box wow animated fadeInUp">
                             <i class="fa fa-lightbulb-o"></i>
-                            <h4>Budget</h4>
+                            <h4>The Economy</h4>
                         </div><!--process box-->
                     </div><!--process col-->
                     <div class="col-md-3 margin20">
                         <div class="process-box wow animated fadeInUp">
                             <i class="fa fa-pencil"></i>
-                            <h4>Spending</h4>
+                            <h4>Public Safety</h4>
                         </div><!--process box-->
                     </div><!--process col-->
                     <div class="col-md-3 margin20">
                         <div class="process-box wow animated fadeInUp">
                             <i class="fa fa-bars"></i>
-                            <h4>Performance</h4>
+                            <h4>Environment</h4>
+                        </div><!--process box-->
+                    </div><!--process col-->
+                    <div class="col-md-3 margin20">
+                        <div class="process-box wow animated fadeInUp">
+                            <i class="fa fa-plane"></i>
+                            <h4>City Services</h4>
+                        </div><!--process box-->
+                    </div><!--process col-->
+                </div>
+                <div class="row">
+                    <div class="col-md-3 margin20">
+                        <div class="process-box wow animated fadeInUp">
+                            <i class="fa fa-lightbulb-o"></i>
+                            <h4>City Budget</h4>
+                        </div><!--process box-->
+                    </div><!--process col-->
+                    <div class="col-md-3 margin20">
+                        <div class="process-box wow animated fadeInUp">
+                            <i class="fa fa-pencil"></i>
+                            <h4>Events & Culture</h4>
+                        </div><!--process box-->
+                    </div><!--process col-->
+                    <div class="col-md-3 margin20">
+                        <div class="process-box wow animated fadeInUp">
+                            <i class="fa fa-bars"></i>
+                            <h4>Parks & Libraries</h4>
                         </div><!--process box-->
                     </div><!--process col-->
                     <div class="col-md-3 margin20">
@@ -206,87 +190,81 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="center-header">
-                            <h3 class="center-heading">The City's Priority Outcomes</h3>
+                            <h3 class="center-heading">Data-Driven Decision Making</h3>
                             <span class="center-line"></span>
-                            <p>What We Do & What Data is Around That</p>
+
                         </div>
                     </div>
                 </div><!--center heading row-->
                 <div class="row">
-                    <div class="col-md-6 margin20">
-                        <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-desktop"></i> A Well Run City</h4>
-                            <p>
-                                Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
-                            </p>
-							<ul>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-							</ul>
-                        </div><!--service box-->
-                    </div><!--service-col-->
-                    <div class="col-md-6 margin20">
-                        <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-image"></i> A Safe City</h4>
-                            <p>
-                                Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
-                            </p>
-							<ul>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-							</ul>
-                        </div><!--service box-->
-                    </div><!--service-col-->
-                    <div class="col-md-6 margin20">
-                        <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-keyboard-o"></i> A Livable and Sustainable City </h4>
-                            <p>
-                                Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
-                            </p>
-							<ul>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-							</ul>
-                        </div><!--service box-->
-                    </div><!--service-col-->
-                    <div class="col-md-6 margin20">
-                        <div class="service-box wow animated fadeInLeft">
-                            <h4><i class="fa fa-thumbs-o-up"></i> A Prosperous City</h4>
-                            <p>Make it easy to do business in Los Angeles; nurture small business; reclaim our economic heritage: entertainment, aerospace, manufacturing, health care, international trade and tourism; make Silicon Beach a pipeline to the future; educate and retrain our workforce for tomorrow’s good jobs.
-                            </p>
-							<ul>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-								<li>
-									<a href="#">Example Data Set</a>
-								</li>
-							</ul>
-									
+		                <div class="col-md-4 margin20">
+		                   <!--<div class="skills-wrapper wow animated fadeInLeft animated animated" data-wow-delay="0.2s">
+		                       <h3 class="heading-progress">Data Sets <span class="pull-right">88%</span></h3>
+		                       <div class="progress">
+		                           <div class="progress-bar" style="width: 88%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar">
+		                           </div>
+		                       </div>
+		                       <h3 class="heading-progress">Departments on COMPStat <span class="pull-right">78%</span></h3>
+		                       <div class="progress">
+		                           <div class="progress-bar" style="width: 78%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="78" role="progressbar">
+		                           </div>
+		                       </div>
+		                       <h3 class="heading-progress">Trainings <span class="pull-right">82%</span></h3>
+		                       <div class="progress">
+		                           <div class="progress-bar" style="width: 82%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="82" role="progressbar">
+		                           </div>
+		                       </div>                    
+		                   </div>--><!--skills-->
+							 <img src="img/chart.png" width="100%">
+		            </div><!--contact detail-->
+ 
+                    <div class="col-md-8 margin20">
+                        <div class="post-wrap wow animated fadeInRight animated">
+                            <div class="post-desc">
+                                <h4><a href="#">The City's Performance Dashboard</a></h4>
+                                <p>
+									On the City's <span class="text-bg">Performance Dashboard</span> you can track our progress on high-level measures of our performance and then view related metrics that provide a complete picture of the economy, city services, safety and government performance.
+                                </p>
+                                <p><a href="#">Read More...</a></p>
+                            </div><!--post-desc-->
+                        </div><!-- post wrap-->
+                    </div>
+                </div>
+                <div class="row">
+		                <div class="col-md-4 margin20">
+							 <img src="img/controlpanel.png" width="100%">
+		            </div><!--contact detail-->
+ 
+                    <div class="col-md-8 margin20">
+                        <div class="post-wrap wow animated fadeInRight animated">
+                            <div class="post-desc">
+                                <h4><a href="#">City Controller's ControlPanelLA</a></h4>
+                                <p>
+									City Controller Ron Galperin launched <span class="text-bg">ControlPanelLA</span>, which features the city's checkbook: line-by-line detail of where taxpayer dollars are going. Citizens can use the ControlPanel for transparency into city expenditures, and the city itself leverages the visualization for identifying opportunities for efficiency.
+                                </p>
+                                <p><a href="#">Read More...</a></p>
+                            </div><!--post-desc-->
+                        </div><!-- post wrap-->
+                    </div>
+                </div>
+                <div class="row">
+		                <div class="col-md-4 margin20">
+
+							 <img src="img/budget.png" width="100%">
+		            </div><!--contact detail-->
+ 
+                    <div class="col-md-8 margin20">
+                        <div class="post-wrap wow animated fadeInRight animated">
+                            <div class="post-desc">
+                                <h4><a href="#">The Mayor's Proposed Budget</a></h4>
+                                <p>
+									Working with the Chief Administrative Officer Miguel Sangalang, Mayor Garcetti each year proposes a budget for Council consideration. You can see and compare the proposed budget against previous budgets on the <span class="text-bg">Open Budget</span> app. 
+                                </p>
+                                <p><a href="#">Read More...</a></p>
+                            </div><!--post-desc-->
+                        </div><!-- post wrap-->
+                    </div>
+                </div>
                         </div><!--service box-->
                     </div><!--service-col-->
                 </div>
@@ -295,7 +273,7 @@
             <div class="container">    
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="heading">Some Facts</h3>
+                        <h3 class="heading">Quick Facts</h3>
                     </div>
                 </div>
                 <div class="divide40"></div>
@@ -321,79 +299,6 @@
         </section><!--services -->
 
 
-        <section id="news" class="padding-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="center-header">
-                            <h3 class="center-heading">Latest News</h3>
-                            <span class="center-line"></span>
-                            <p>Lorem ipsum dollor sit Amet</p>
-                        </div>
-                    </div>
-                </div><!--center header-->
-                <div class="row">
-                    <div class="col-md-4 margin20">
-                        <div class="post-wrap wow animated fadeInLeft animated">
-                            <a href="#">
-                                <div class="item-img-wrap">
-                                    <img src="img/work-7.png" class="img-responsive" alt="workimg">
-                                    <div class="item-img-overlay">
-                                        <span></span>
-                                    </div>
-                                </div>                       
-                            </a><!--post link--> 
-                            <div class="post-desc">
-                                <h4><a href="#">Lorem ipsum dollor Sit amet</a></h4>
-                                <p>
-                                    Quisque ligulas ipsum, euismod atras vulputate <span class="text-color">iltricies</span> etri elit. Lorem ipsum dolor sit amet, consectetur.
-                                </p>
-                                <p><a href="#">Read More...</a></p>
-                            </div><!--post-desc-->
-                        </div><!-- post wrap-->
-                    </div>
-                    <div class="col-md-4 margin20">
-                        <div class="post-wrap wow animated fadeInLeft animated">
-                            <a href="#">
-                                <div class="item-img-wrap">
-                                    <img src="img/work-5.png" class="img-responsive" alt="workimg">
-                                    <div class="item-img-overlay">
-                                        <span></span>
-                                    </div>
-                                </div>                       
-                            </a><!--post link--> 
-                            <div class="post-desc">
-                                <h4><a href="#">Lorem ipsum dollor Sit amet</a></h4>
-                                <p>
-                                    Quisque ligulas ipsum, euismod atras vulputate iltricies etri elit. <span class="text-color">Lorem ipsum dolor</span> sit amet, consectetur.
-                                </p>
-                                <p><a href="#">Read More...</a></p>
-                            </div><!--post-desc-->
-                        </div><!-- post wrap-->
-                    </div>
-                    <div class="col-md-4 margin20">
-                        <div class="post-wrap wow animated fadeInLeft animated">
-                            <a href="#">
-                                <div class="item-img-wrap">
-                                    <img src="img/work-8.png" class="img-responsive" alt="workimg">
-                                    <div class="item-img-overlay">
-                                        <span></span>
-                                    </div>
-                                </div>                       
-                            </a><!--post link--> 
-                            <div class="post-desc">
-                                <h4><a href="#">Lorem ipsum dollor Sit amet</a></h4>
-                                <p>
-                                    Quisque ligulas ipsum, <span class="text-bg">euismod atras</span> vulputate iltricies etri elit. Lorem ipsum dolor sit amet, consectetur.
-                                </p>
-                                <p><a href="#">Read More...</a></p>
-                            </div><!--post-desc-->
-                        </div><!-- post wrap-->
-                    </div>
-                </div>
-            </div>
-        </section><!--#news-->
-
 
         <section id="contact-text" class="padding-80 parallax" data-stellar-background-ratio="0.5">
             <div class="container text-center text-uppercase">
@@ -404,55 +309,66 @@
     <section id="contact" class="padding-80">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="center-header">
-                        <h3 class="center-heading">Ask for a Data Set</h3>
-                        <span class="center-line"></span>
-                        <p>We want to hear from you about what data is useful and important; let us know what you'd like to see and we'll work to open it up.</p>
-                    </div>
-                </div>
-            </div><!--center header-->
-            <div class="row">
-                <div class="col-md-7 margin30">
-                    <h3 class="heading">Get In Touch</h3>
-                    <div class="contact-form">
-                        <form role="form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="mail">Email</label>
-                                <input type="email" class="form-control" id="mail" required="">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea class="form-control" rows="6" id="message" required=""></textarea>
-                            </div>
 
-                            <button type="submit" class="btn btn-theme-bg">Send Message</button>
-                        </form><!--form-->
+                <div class="col-md-4 margin20">
+                    <h3 class="heading">Learn how to use the data</h3>
+                    <div class="contact-form">
+						<h4><a href="#">The API</a></h4>
+							<ul>
+								<li>This data portal features a robust API for all the data hosted here. Build apps and then let us know -- we'll showcase them.</li>
+							</ul>
+	                    <h4><a href="#">Trainings</a></h4>
+							<ul>
+								<li>Check out trainings and tutorials on how to use this data portal to make charts, maps, and other visualizations.</li>
+							</ul>
+						<h4><a href="#">FAQ</a></h4>
+							<ul>
+								<li>Have a question, feel free to reach out, or check out this list of frequently asked questions.</li>
+							</ul>
+	
+							
                     </div><!--contact-form-->
                 </div>
-                <div class="col-md-5">
-                   <div class="skills-wrapper wow animated fadeInRight animated animated" data-wow-delay="0.2s">
-                       <h3 class="heading-progress">Data Sets <span class="pull-right">88%</span></h3>
-                       <div class="progress">
-                           <div class="progress-bar" style="width: 88%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar">
-                           </div>
-                       </div>
-                       <h3 class="heading-progress">Departments on COMPStat <span class="pull-right">78%</span></h3>
-                       <div class="progress">
-                           <div class="progress-bar" style="width: 78%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="78" role="progressbar">
-                           </div>
-                       </div>
-                       <h3 class="heading-progress">Trainings <span class="pull-right">82%</span></h3>
-                       <div class="progress">
-                           <div class="progress-bar" style="width: 82%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="82" role="progressbar">
-                           </div>
-                       </div>                    
-                   </div><!--skills-->
-            </div><!--contact detail-->
+
+                <div class="col-md-4 margin20">
+                    <h3 class="heading">Other Data Sites</h3>
+                    <div class="contact-form">
+                        <p style="display: block; min-height: 80px;">
+							<img src="https://www.data.gov/media/2013/11/Datagov_logo.jpg" width="200px" align="left" hspace="5"><br />
+                           
+                        </p>
+                        <p style="display: block; min-height: 80px;">
+							<img src="https://controllerdata.lacity.org/views/brvc-bcb9/files/HeGwVp3fra8Bj4ZTX5QQ6Pu7Qblb5UEZfRl2mbcENpE" width="75px" align="left" hspace="5"><br />ControlPanelLA
+                           
+                        </p>						
+
+                        <p style="display: block; min-height: 80px;">
+							<img src="http://www.laalmanac.com/images/seal_LACounty_old.gif" width="75px" align="left" hspace="5"><br />LA County GIS Portal
+                           
+                        </p>
+                    </div><!--contact-form-->
+                </div>
+            <div class="col-md-4 margin20">
+                <h3 class="heading">Ask for another dataset</h3>
+                <div class="contact-form">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="mail">Email</label>
+                            <input type="email" class="form-control" id="mail" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" rows="6" id="message" required=""></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-theme-bg">Send Message</button>
+                    </form><!--form-->
+                </div><!--contact-form-->
+            </div>
         </div>
     </section><!--#contact-->
 
@@ -473,7 +389,7 @@
                     </div>
                     <div class="col-md-3 margin30">
                         <div class="footer-col">
-                            <h3 class="heading">Recent Post</h3>
+                            <h3 class="heading">DataLA Tumblr Post</h3>
                             <ul class="list-unstyled popular-post">
                                 <li>
                                     <div class="popular-img">
@@ -517,6 +433,9 @@
                             </ul>
                         </div>
                         <div class="divide30"></div>
+                       
+                    </div><!--footer col-->
+                    <div class="col-md-3 margin30">
                         <div class="footer-col">
                             <h3 class="heading">Newsletter</h3>
                             <p>
@@ -532,40 +451,6 @@
                                 </div>
                             </form>
                         </div>
-                    </div><!--footer col-->
-                    <div class="col-md-3 margin30">
-                        <div class="footer-col">
-                            <h3 class="heading">Recent Projects</h3>
-                            <div class=" footer-work">
-                                <a href="#">
-                                    <img src="img/work-1.png" class="img-responsive" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="img/work-2.png" class="img-responsive" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="img/work-10.jpg" class="img-responsive" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="img/work-4.jpg" class="img-responsive" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="img/work-5.png" class="img-responsive" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="img/work-6.png" class="img-responsive" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="img/work-7.png" class="img-responsive" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="img/work-8.png" class="img-responsive" alt="">
-                                </a>
-                                <a href="#">
-                                    <img src="img/work-9.png" class="img-responsive" alt="">
-                                </a>
-                            </div>
-                        </div><!--footer col-->
                     </div>
                 </div><!--row-->
                 <div class="row">
@@ -599,42 +484,8 @@
         <!--customizable plugin edit according to your needs-->
         <script src="js/custom.js" type="text/javascript"></script>
         <!--gmap js-->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-        <script type="text/javascript">
-            var myLatlng;
-            var map;
-            var marker;
 
-            function initialize() {
-                myLatlng = new google.maps.LatLng(37.397802, -121.890288);
 
-                var mapOptions = {
-                    zoom: 13,
-                    center: myLatlng,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    scrollwheel: false,
-                    draggable: false
-                };
-                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-                var contentString = '<p style="line-height: 20px;"><strong>Narani Template</strong></p><p>Vailshali, Narani City, 302012</p>';
-
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-
-                marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: 'Marker'
-                });
-
-                google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.open(map, marker);
-                });
-            }
-
-            google.maps.event.addDomListener(window, 'load', initialize);
-        </script>
     </body>
 </html>
