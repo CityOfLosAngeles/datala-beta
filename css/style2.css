@@ -947,7 +947,10 @@ span.popular-tag{
 
 /*************************one page *****************/
 
-
+img.mayor-pic {
+	display: block;
+	float: right;
+}
 
 .padding-80{
     padding: 80px 0;
